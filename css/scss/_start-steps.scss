@@ -1,0 +1,88 @@
+.step-4,
+.step-2,
+.step-5,
+.step-1,
+.step-3 {
+	display: inline-block;
+	background: url('../images/steps.png') no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+	text-align: left; 
+}
+ 
+.step-4 { background-position: -4px -0px; width: 54px; height: 41px; }
+.step-2 { background-position: -4px -45px; width: 49px; height: 42px; margin-left: -2px; margin-bottom: 4px;}
+.step-5 { background-position: -4px -91px; width: 49px; height: 50px; margin-top: 2px;}
+.step-1 { background-position: -4px -145px; width: 48px; height: 48px; margin-left: 4px;}
+.step-3 { background-position: -4px -197px; width: 42px; height: 54px; }
+
+.start_steps {
+	background-color: #F1F3F5;
+	padding: 60px 0;
+}
+
+.steps_box {
+	@include flex($wrap: wrap, $alignI: flex-start);
+	margin-top: 58px;
+	counter-reset: steps;
+
+	.item {
+		width: 20%;
+		position: relative;
+
+		&:not(:last-child):after {
+			content: '';
+			width: 14px;
+			height: 14px;
+			border-top: 2px solid #949294;
+			border-right: 2px solid #949294;
+			top: 61px;
+			right: -5px;
+			position: absolute;
+			border-radius: 2px;
+			margin-top: -11px;
+			@include transform(rotate(45deg));
+		}
+
+		&__icon {
+			width: 120px;
+			height: 120px;
+			background-color: #fff;
+			border-radius: 50%;
+			@extend %vertAlign;
+			text-align: center;
+  			box-shadow: 1px 1.732px 10px 0px rgba( 0, 0, 0, .3);
+  			display: block;
+  			margin: 0 auto 20px;
+  			position: relative;
+
+  			&:after {
+				counter-increment: steps;
+				content: counter(steps);
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				background-color: $velvet;
+				text-align: center;
+				color: #fff;
+				line-height: 35px;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				font-size: 21.3px;
+				font-family: $osb;
+			}
+
+			i {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+			font-family: $osb;
+			padding: 0 10px;
+		}
+	}
+}
