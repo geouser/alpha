@@ -2,7 +2,9 @@
 @import 'slick';
 @import 'slick-theme';
 @import 'magnific-popup';
+@import 'fonts';
 @import 'settings';
+@import 'buttons';
 @import 'mixins';
 
 
@@ -30,10 +32,6 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 
 */
 
-
-/*---------------------- 
-    BUTTON STYLES
-------------------------*/
 
 h1 {
   text-align: left;
@@ -273,4 +271,4 @@ nav ul {
 
 
 
-
+/*------------------------*/

@@ -1,31 +1,45 @@
 // COLORS
 // ---------------------------
-$colorGrey: #3A3A3A;
-$colorBlue: #30A7E4;
-$colorBlueD: #062A41;
-
+$velvet: 	'#7F5D92';
+$green: 	'#67BD2E';
+$orange: 	'#FFCC3E';
 
 // FONTS
 // ---------------------------
-$fontH: 24px/28px 'Helvetica';
-$fontSH: 22px/26px 'Helvetica';
-$fontT: 16px/22px 'Helvetica';
+$os:      	'open_sansregular';
+$osb:     	'open_sansbold';
+$oseb:    	'open_sansextrabold';
+$ossb: 	  	'open_sanssemibold';
+
+$epm: 		'espuma_promedium';
 
 
+
+// RESPONSIVE
+// ---------------------------
+$tablets: 	'max-width: 1000px';
+$phones:  	'max-width: 750px';
+
+
+
+// TYPOGRAPHIC
+// ---------------------------
 html, body                    	{   height: 100%;}
-p                             	{   color: $colorGrey;}
-h1, h2, h3, h4, h5, p         	{   color: $colorGrey;}
-.white                          {	color: #FFF;}
+p                             	{   font-family: $os; font-size: 14px;}
+h1 								{ 	font-family: $oseb;}
+h2, h3, h4, h5          		{   font-family: $ossb;}
+
 
 
 // lAYOUT
 // ---------------------------
+.wrapper {
+	width: 990px;
+	margin: 0 auto;
+    text-align: center;
 
-.wrapper                      	{   width: 1200px;
-								   	margin: 0 auto;
-                                   	text-align: center;
-                              	}
-header 							{}
-aside 							{}
-main 							{}
-footer 							{}
+	@media ($tablets) {
+		width: 100%;
+		padding: 0 15px;
+	}    
+}
