@@ -35,6 +35,9 @@ CSS tooltip-----------  @include tooltiptooltip($content: attr(data-tooltip), $d
 
 h1 {
   text-align: left;
+  text-transform: uppercase;
+  font: 40px $oseb;
+  color: #FFF;
   .subtitle {
   }
 }
@@ -60,14 +63,14 @@ a {
 /*---------------------- 
     HEADER STYLES
 ------------------------*/
+body > .wrapper {position: relative;}
 header {
     margin: 0;
-    left:0;
-    @include position(absolute, 0, auto, auto, 0);
-    width: 100%;
+    width: 780px;
+    @include position(absolute, 0, 0, auto, auto);
     z-index: 100;
-    background: #fff;
     @include transition(all, .4s);
+    @include flex($alignI: center, $justify: space-between);
 
     @include m800 {
          @include position(fixed, 0, auto, auto, -100%);
@@ -81,31 +84,14 @@ header {
          
          &.active {left: 0;}
          
-         .wrapper {
-               @include flexDirection(column);
-               width: 100%;
-        }
+        @include flexDirection(column);
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
     }
 
-
-    .header__top {
-        padding: 7px 0;
-        color: #FFF;
-        .wrapper {
-            @include flex();
-        }
-        .divide {
-            height: 35px;
-            width: 1px;
-            vertical-align: middle;
-            background-color: #1E5D75;
-        }
-    }
-     .header__bottom {
-        padding: 30px 0;
-        background-color: #fff;
-        .wrapper {
-            @include flex();
+    .header__info {
+        a {
+            display: block;
         }
     }
 }
@@ -117,30 +103,11 @@ header {
 }
 
 .logo {
-    position: relative;
+    @include position(absolute, 0px, auto, auto, 0);
     display: block;
-  & img {
-     height: 100%;
-     display: inline-block;
-     vertical-align: middle;   
-    }
-    & p {
-        display: inline-block;
-        vertical-align: middle;
-        padding-left: 18px;
-        text-transform: uppercase;
-        text-align: left;
-        padding-top: 6px;
-        span{
-         display: inline-block;
-        }
-        strong {
-            color: #000;
-            text-transform: none;
-            display: block;
-            margin-top: 5px;
-            padding-left: 2px;
-        }
+    width: 200px;
+    img {
+        width: 100%;
     }
 }
 
@@ -151,17 +118,20 @@ nav ul {
         list-style-type: none;
         &  a {
             display: inline-block;
-            margin: 0 20px;
+            margin-right: 15px;
             text-decoration: none;
+            border-bottom: 1px solid transparent;
             @include transition(all, .2s);
+            font: 13px $ossb;
+            color: #FFF;
                 
-            &:hover {}
+            &:hover {border-bottom: 1px solid $green;}
         }
 
 
       @include m800 { 
           display: block;
-          height: 100%;
+          width: 100%;
           overflow: scroll;
           position: relative;
           
@@ -176,27 +146,27 @@ nav ul {
 
 
 /* ------- menu toggle --------- */
-.menu-button                  {    
-                                    display: none;
-                                    width: 50px;
-                                    height: 50px;
-                                    @include position(fixed, 15px, 15px, auto, auto);
-                                    margin: auto; 
-                                    cursor: pointer;
-                                    z-index: 100;
-                                    background-color: salmon;
-                                    border: none;
-                                    -webkit-border-radius: 4px;
-                                            border-radius: 4px;
-      .menu-line                    {
-                                          display: block;
-                                          @include position(absolute, auto, 0, auto, 0);
-                                          width: 60%;
-                                          height: 5px;
-                                          background-color: #fff;
-                                          -webkit-border-radius: 1px;
-                                          border-radius: 1px;
-                                          @include transition(all, .4s);
+.menu-button  {    
+            display: none;
+            width: 50px;
+            height: 50px;
+            @include position(fixed, 15px, 15px, auto, auto);
+            margin: auto; 
+            cursor: pointer;
+            z-index: 100;
+            background-color: salmon;
+            border: none;
+            -webkit-border-radius: 4px;
+                    border-radius: 4px;
+    .menu-line                    {
+              display: block;
+              @include position(absolute, auto, 0, auto, 0);
+              width: 60%;
+              height: 5px;
+              background-color: #fff;
+              -webkit-border-radius: 1px;
+              border-radius: 1px;
+              @include transition(all, .4s);
       }
 
       .top_line                     {   top: 12px;  margin: auto;}
@@ -221,14 +191,12 @@ nav ul {
     OFFER STYLES
 ------------------------*/
 .offer {
-    height: 100%;
-    min-height: 650px;
-    max-height: 900px;
+    height: 650px;
+    padding-top: 90px;
     background: url('../images/law.jpg') no-repeat center center;
     background-size: cover;
-    padding: 200px 0 0 0;
     position: relative;
-
+    background-color: #000;
 
     .offerInfo {
         height: 100%;
@@ -238,6 +206,35 @@ nav ul {
         text-align: center;
     }
 
+    form {
+        @include position(absolute, auto, 0, 0, 0);
+        padding: 35px 0;
+        background-color: rgba(0,0,0, .65);
+        .wrapper {
+            padding-left: 190px;
+            .form__info {
+                em,
+                p {display: inline-block; vertical-align: bottom; text-align: left;}
+                em {
+                    text-transform: uppercase;
+                    font: 15px $osb;
+                    width: 40%;
+                    color: #FFF;
+                    strong {
+                        font: 50px $oseb;
+                        line-height: 1;
+                        color: $orange;
+                    }
+                }
+                p {
+                    font: 14px $os;
+                    width: 58%;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -245,26 +242,72 @@ nav ul {
     INFOBLOCKS STYLES
 ------------------------*/
 .infoBlocks {
-      @include flex($alignI: top, $justify: center, $wrap: wrap);
+      @include flex($alignI: top, $justify: space-between, $wrap: wrap);
       
       .infoBlock  {
-                  margin-bottom: 20px;
                   padding: 0 20px;
                   text-align: center;
-                  border: 1px solid peru;
             &_icon {
-                        width: 150px;
-                        height: 150px;
+                        width: 600px;
+                        height: 60px;
                         text-align: center;
-                        margin: 10px auto 15px;
+                        margin: 0px auto 10px;
+            }
+            p {
+                font: 15px $os;
+                color: #FFF;
             }
         }
 
     &.--two  .infoBlock   {    width: 50%;}
-    &.--four .infoBlock   {    width: 25%;}
-    &.--three .infoBlock  {    width: 33%;}
+    &.three .infoBlock    {    width: 33%;}
+    &.five .infoBlock     {    width: 20%;}
 }
 
+.about {
+    padding: 60px 0;
+    .wrapper {
+        overflow: visible;
+    }
+    .infoBlocks {
+        .infoBlock {
+            width: 31%;
+            background-color: $velvet;
+            color: #FFF;
+            padding: 25px 20px;
+            box-shadow: 5.035px 6.217px 6px 0px rgba( 0, 0, 0, .2 );
+            -webkit-border-radius: 5px;
+                    border-radius: 5px;
+            h3 {
+                font: 18px $osb;
+                &:after {
+                    content: "";
+                    display: block;
+                    margin: 10px auto;
+                    width: 70px;
+                    border-top: 1px solid #fff;
+                }
+            }
+            p {
+                line-height: 22px;
+            }
+        }
+    }
+    &__numbers {
+        margin-top: 60px;
+        &__item {
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            margin: 0 11px;
+            span {
+                font: 40px/1 $os;
+                display: block; text-align: center;
+                margin: 24px auto;
+            }
+        }
+    }
+}
 
 
 
