@@ -41,7 +41,6 @@ h1 {
 h2 {
   color: #000;
   display: block;
-  text-transform: uppercase;
 }
 .main-page h2 {
   width: 100%;
@@ -272,5 +271,6 @@ nav ul {
 
 
 /*------------------------*/
+@import 'clients';
 @import 'map';
 @import 'footer';

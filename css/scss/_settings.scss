@@ -1,8 +1,8 @@
 // COLORS
 // ---------------------------
-$velvet: 	'#7F5D92';
-$green: 	'#67BD2E';
-$orange: 	'#FFCC3E';
+$velvet:	 #7F5D92;
+$green: 	 #67BD2E;
+$orange: 	 #FFCC3E;
 
 // FONTS
 // ---------------------------
@@ -29,6 +29,7 @@ p                             	{   font-family: $os; font-size: 14px;}
 h1 								{ 	font-family: $oseb;}
 h2, h3, h4, h5          		{   font-family: $ossb;}
 
+h2 								{	font-size: 38px; text-transform: none;}
 
 
 // lAYOUT
