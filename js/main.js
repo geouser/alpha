@@ -66,6 +66,8 @@ $('.menu-button').on('click', function(event) {
 
   });
 
+$('.tabs').tabs();
+
 });
 
 
