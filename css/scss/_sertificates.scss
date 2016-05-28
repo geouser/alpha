@@ -1,0 +1,134 @@
+.sertificates {
+	padding: 50px 0 55px;
+
+	.wrapper {
+		@extend %clearfix;
+	}
+
+	.col {
+		
+		width: 50%;
+		float: left;
+	}
+
+	h2 {
+		text-align: left;
+	}
+
+	&__box {
+		@extend %clearfix;
+		margin-top: 40px;
+
+		.item {
+			width: 50%;
+			float: left;
+			height: 355px;
+			background-image: url(../images/border.jpg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			padding-top: 86px;
+			padding-right: 9px;
+		}
+	}
+
+	&__feature {
+		padding-left: 95px;
+		position: relative;
+		text-align: left;
+
+		&:before {
+			content: '';
+			width: 55px;
+			height: 76px;
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 20px;
+		}
+		
+		&.garanty {
+			padding-bottom: 65px;
+			margin-bottom: 65px;
+		}
+		&.garanty:before {
+			background-image: url(../images/garanty.jpg);
+		}
+
+		&.service:before {
+			background-image: url(../images/service.jpg);
+		}
+	
+		h3 {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+		p {
+			line-height: 24px;
+		}
+
+		ul {
+			margin: 0;
+			font-size: 14px;
+			line-height: 24px;
+		}
+
+		.important {
+			width: 425px;
+			border: 1px dashed #E6E6E6;
+			padding: 6px 35px 6px 90px;
+			border-radius: 3px;
+			position: absolute;
+			bottom: 0;
+			right: 30px;
+			background-image: url(../images/exclamation.jpg);
+			background-size: 26px;
+			background-repeat: no-repeat;
+			background-position: 43px 50%;
+
+			&:after {
+				content: '';
+				width: 14px;
+				height: 14px;
+				border-top: 1px dashed #E6E6E6;
+				border-right: 1px dashed #E6E6E6;
+				background-color: #fff;
+				position: absolute;
+				top: -10px;
+				margin-left: -10px;
+				left: 50%;
+				@include transform(rotate(-45deg))
+			}
+
+			p {
+				font-size: 12px;
+				font-family: $osb;
+				color: #8e8e8e;
+				line-height: normal;
+			}
+		}
+	}
+}
+
+ul{
+	li {
+		padding-left: 20px;
+		list-style: none;
+		position: relative;
+
+		&:before {
+			content: '';
+			width: 5px;
+			height: 9px;
+			border-bottom: 2px solid $green;
+			border-right: 2px solid $green;
+			@include transform(rotate(45deg));
+			position: absolute;
+			left: 2px;
+			top: 5px;
+		}
+	}
+}
