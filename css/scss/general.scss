@@ -228,10 +228,21 @@ nav ul {
 /*---------------------- 
     OFFER STYLES
 ------------------------*/
+.cycle-2, .cycle-1, .cycle-5, .cycle-3, .cycle-4
+{ display: inline-block; background: url('../images/cycle-icons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+.cycle-2 { background-position: -4px -0px; width: 30px; height: 24px; }
+.cycle-1 { background-position: -4px -28px; width: 27px; height: 24px; }
+.cycle-5 { background-position: -4px -56px; width: 26px; height: 25px; }
+.cycle-3 { background-position: -4px -85px; width: 23px; height: 29px; }
+.cycle-4 { background-position: -4px -118px; width: 17px; height: 30px; }
+
+
+
 .offer {
     height: 650px;
     padding: 110px 0 230px;
-    background: url('../images/law.jpg') no-repeat center center;
+    background: url('../images/main-screen.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     background-color: #000;
@@ -359,6 +370,21 @@ nav ul {
 /*---------------------- 
     ABOUT STYLES
 ------------------------*/
+.about-3, .about-4, .about-2, .about-1, .about-5, 
+.about-7, .about-6, .about-8
+{ display: inline-block; background: url('../images/about-icons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+.about-3 { background-position: -4px -0px; width: 47px; height: 46px; }
+.about-4 { background-position: -4px -50px; width: 45px; height: 26px; }
+.about-2 { background-position: -4px -80px; width: 44px; height: 45px; }
+.about-1 { background-position: -4px -129px; width: 41px; height: 45px; }
+.about-5 { background-position: -4px -178px; width: 36px; height: 29px; }
+.about-7 { background-position: -4px -211px; width: 32px; height: 30px; }
+.about-6 { background-position: -4px -245px; width: 31px; height: 31px; }
+.about-8 { background-position: -4px -280px; width: 31px; height: 31px; }
+
+
+
 .about {
     padding: 60px 0;
     .wrapper {
@@ -458,7 +484,10 @@ nav ul {
     background-color: #F1F3F5;
     padding-top: 0px;
     &__head {
-        background-color: #343C41;
+        background-image: url(../images/services.jpg);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 180px;
         padding: 40px 0 55px;
     }
@@ -640,6 +669,10 @@ display: inline-block;
 
 .projects {
     padding: 60px 0;
+    background-image: url(../images/projects.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     .tabs {
         margin-top: 25px;
         ul.ui-tabs-nav {
@@ -721,6 +754,15 @@ display: inline-block;
         }
     } 
 }
+
+
+.offer-2, .offer-4, .offer-1, .offer-3
+{ display: inline-block; background: url('../images/offers-icons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+.offer-2 { background-position: -4px -0px; width: 42px; height: 43px; }
+.offer-4 { background-position: -4px -47px; width: 41px; height: 40px; }
+.offer-1 { background-position: -4px -91px; width: 35px; height: 36px; }
+.offer-3 { background-position: -4px -131px; width: 30px; height: 40px; }
 
 
 .whatOffer {
