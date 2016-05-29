@@ -36,12 +36,18 @@ section {
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   font: 40px $oseb;
   text-shadow: 0px 0px 13px rgb( 0, 0, 0 );
   color: #FFF;
   .subtitle {
+  }
+  @include m500 {
+      font-size: 36px;
+  }
+  @include m360 {
+      font-size: 28px;
   }
 }
 h2 {
@@ -77,12 +83,12 @@ header {
     @include transition(all, .4s);
     @include flex($alignI: center, $justify: space-between);
 
-    @include m800 {
+    @include m1000 {
          @include position(fixed, 0, auto, auto, -100%);
          width: 260px !important;
          height: 100%;
          text-align: center;
-         background-color: #fff;
+         background-color: rgba(0,0,0, .9);
          margin-top: 0;
          padding: 20px 0;
          z-index: 100;
@@ -157,15 +163,14 @@ nav ul {
         }
 
 
-      @include m800 { 
+      @include m1000 { 
           display: block;
           width: 100%;
           overflow: scroll;
           position: relative;
-          
           li a                    {   
                 margin: 0 0 25px 0;
-                &.active {color: #ECCC1D;}
+                &.active {color: $orange;}
                 &:hover  {background: transparent;}
           } 
       }
@@ -183,7 +188,7 @@ nav ul {
             margin: auto; 
             cursor: pointer;
             z-index: 100;
-            background-color: salmon;
+            background-color: $green;
             border: none;
             -webkit-border-radius: 4px;
                     border-radius: 4px;
@@ -207,8 +212,12 @@ nav ul {
       &.active .bottom_line         {   @include transform(rotate(-45deg)); bottom: 45%;}
       &.active .middle_line         {   width: 0; left: 50%;}
 
-      @include m800 {
+      @include m1000 {
             display: block;
+      }
+      @include m360 {
+          right: 7px;
+          top: 7px;
       }
 
 }
@@ -226,6 +235,14 @@ nav ul {
     background-size: cover;
     position: relative;
     background-color: #000;
+    @include m1000 {
+        padding-top: 0;
+        h1 {width: 85%;}
+    }
+    @include m800 {
+        height: auto;
+        padding-top: 60px;
+    }
 
     .offerInfo {
         height: 100%;
@@ -243,6 +260,32 @@ nav ul {
                 width: 132%;
             }
         }
+        @include m1000 {
+            .infoBlocks {
+            width: 100%;
+            margin-top: 10px;
+            -webkit-justify-content: center;
+                    justify-content: center;
+            }
+            .infoBlock {
+                width: 27% !important;
+                padding: 0 4px;
+                &:nth-of-type(3) p,
+                &:nth-of-type(4) p {
+                    width: 100%;
+                }
+            }
+        }
+        @include m500 {
+            .infoBlock {width: 50%!important;
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+         @include m360 {
+           .infoBlock p {font-size: 13px; line-height: normal;}  
+         }
     }
 
     .order_form {
@@ -268,6 +311,19 @@ nav ul {
             width: 60%;
             color: #FFF;
             margin-right: -6px;
+        }
+        @include m1000 {
+            padding: 10px 0;
+           em {
+            font: 13px $osb;
+            strong {
+                font-size: 36px;
+            }
+            }
+            p {
+                font: 13px $os;
+                padding-left: 5px;
+            } 
         }
     }
 
@@ -331,6 +387,32 @@ nav ul {
                 line-height: 22px;
             }
         }
+        @include m1000 { 
+            .infoBlock{
+                width: 32%;
+                p {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+            }
+        }
+        @include m700 { 
+            .infoBlock{
+                padding: 15px 10px;
+            }
+        }
+        @include m600 { 
+            -webkit-justify-content: center;
+                    justify-content: center;
+            .infoBlock{
+               width: 300px;
+               margin-bottom: 10px;
+               padding: 25px;
+               p {
+                   font-size: 14px;
+               }
+            }
+        }
     }
     &__numbers {
         margin-top: 60px;
@@ -345,6 +427,24 @@ nav ul {
                 margin: 24px auto;
             }
         }
+        @include m1000 { 
+            &__item {
+                width: 28%;
+                margin: 0;
+                padding: 0 5px;
+                margin-bottom: 10px;
+            }
+        }
+        @include m700 { 
+            &__item {
+                width: 45%;
+            }
+        }
+        @include m500 { 
+            &__item {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -356,7 +456,7 @@ nav ul {
 
 .services {
     background-color: #F1F3F5;
-    padding-bottom: 60px;
+    padding-top: 0px;
     &__head {
         background-color: #343C41;
         height: 180px;
@@ -400,6 +500,9 @@ display: inline-block;
                 margin-left: 5px;
             }
         }
+        @include m800 {
+            margin-top: 10px;
+        }
     }
 }
 
@@ -409,7 +512,7 @@ display: inline-block;
     z-index: 2;
     position: relative;
     ul.ui-tabs-nav {
-        @include flex($alignI: bottom, $justify: space-between);
+        @include flex($alignI: bottom, $justify: space-between, $wrap: wrap);
         margin: 0;
         li {
             height: 55px;
@@ -442,6 +545,36 @@ display: inline-block;
                 display: inline-block;
                 height: 100%;
                 width: 100%;
+                @include m1000 { 
+                    font-size: 13px;
+                }
+            }
+            @include m800 { 
+                width: 48%;
+                background: #fff !important;
+                margin-bottom: 10px;
+                -webkit-box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+                        box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+                -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                a {
+                    color: #000;
+                }
+            }
+            @include m600 {
+                width: 100%;
+            }
+        }
+        @include m800 {
+            background-color: transprent;  
+            -webkit-justify-content: space-around;
+                    justify-content: space-around;
+            li a {font-size: 15px;}
+            li.ui-state-active {
+                background-color: $velvet!important;
+                a {
+                    color: #FFF;
+                }
             }
         }
     }
@@ -454,10 +587,16 @@ display: inline-block;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
         box-shadow: 0px 26px 39px 4px rgba( 0, 0, 0, .2 );
+        @include m600 {
+            padding: 15px 20px;
+        }
         h3 {
             font: 18px $ossb;
             color: #000;
             margin-bottom: 20px;
+            @include m600 {
+               font-size: 16px;
+            }
         }
         ul {
             margin-bottom: 20px;
@@ -465,6 +604,10 @@ display: inline-block;
             li {
                 padding-left: 40px;
                 margin-bottom: 25px;
+                @include m600 {
+                   margin-bottom: 15px;
+                   font-size:  14px;
+                }
             }
             li:before {
                 counter-increment: list;
@@ -487,6 +630,9 @@ display: inline-block;
         }
         p {
             line-height: 24px;
+            @include m600 {
+               line-height: 20px;
+            }
         }
     }
 }
@@ -520,6 +666,26 @@ display: inline-block;
                 }
                 a {
                     color: #000;
+                }
+                @include m800 { 
+                width: 48%;
+                background: #F1F1F1 !important;
+                -webkit-box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+                        box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+                -webkit-border-radius: 3px;
+                margin-bottom: 10px;
+                        border-radius: 3px;
+                }
+                @include m600 {
+                    width: 100%;
+                }
+            }
+            @include m800 {
+                background-color: transparent;  
+                -webkit-justify-content: space-around;
+                        justify-content: space-around;
+                li.ui-state-active {
+                    background-color: $green !important;;
                 }
             }
         }
@@ -575,6 +741,9 @@ display: inline-block;
             vertical-align: top;
             margin-right: 18px;
             background-color: #7F5D92;
+            @include m1000 {
+               margin-right: 10px;
+            }
         }
         &__info {
             display: inline-block;
@@ -583,6 +752,9 @@ display: inline-block;
             padding-right: 60px;
             -ms-text-align-last: left;
                 text-align-last: left;
+            @include m1000 {
+               padding-right: 20px;
+            }
             ul,p, h4 {
                 text-align: left;
             }
@@ -592,13 +764,28 @@ display: inline-block;
             }
             p {
                 font: 14px/24px $os;
+                @include m360 {
+                   font: 13px/20px $os;
+                }
             }
             ul {
                 margin: 0;
             }
             li {
                 font: 14px/24px $os;
+                @include m360 {
+                   font: 13px/20px $os;
+                }
             }
+        }
+        @include m700 {
+           width: 70%;
+           float: none;
+           display: block;
+           margin: 10px auto 30px;
+        }
+        @include m500 {
+           width: 310px;
         }
     }
     & + .offer_form {padding: 60px 0;}
