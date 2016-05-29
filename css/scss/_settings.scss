@@ -27,7 +27,7 @@ $phones:  	'max-width: 750px';
 html, body                    	{   height: 100%; font-family: $os;}
 p                             	{   font-size: 14px;}
 h1 								{ 	font-family: $oseb;}
-h2, h3, h4, h5          		{   font-family: $ossb;}
+h2, h3, h4, h5          		{   font-family: $ossb; font-weight: normal;}
 
 h2 								{	font-size: 38px; text-transform: none;}
 h2+small 						{ 	font-size: 15px;}

@@ -1,0 +1,93 @@
+.adv-4,
+.adv-5,
+.adv-2,
+.adv-1,
+.adv-6, 
+.adv-3 {
+	display: inline-block;
+	background: url('../images/advantages.png') no-repeat;
+	overflow: hidden;
+	text-indent: -9999px;
+	text-align: left;
+}
+ 
+.adv-4 { background-position: -4px -0px; width: 40px; height: 40px; }
+.adv-5 { background-position: -4px -44px; width: 39px; height: 30px; }
+.adv-2 { background-position: -4px -78px; width: 33px; height: 35px; }
+.adv-1 { background-position: -4px -117px; width: 31px; height: 32px; }
+.adv-6 { background-position: -4px -153px; width: 30px; height: 41px; }
+.adv-3 { background-position: -4px -198px; width: 20px; height: 30px; }
+
+
+
+
+
+.advantages {
+	background-image: url(../images/advantages.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	padding: 48px 0 60px;
+
+	h2,
+	h2 + small {
+		color: #fff;
+	}
+
+	&__box {
+		@include flex($alignI: flex-start, $wrap: wrap);
+		margin-top: 70px;
+
+		.item {
+			text-align: left;
+			color: #fff;
+			width: 33.33%;
+			margin-bottom: 50px;
+
+			&__icon {
+				width: 72px;
+				height: 72px;
+				background-color: $velvet;
+				@extend %vertAlign;
+				text-align: center;
+				display: inline-block;
+				vertical-align: top;
+				margin: 0 -2px;
+				position: relative;
+
+				&:after {
+					content: '';
+					width: 0;
+					height: 0;
+					border-top: 72px solid #fff;
+					border-left: 72px solid transparent;
+					position: absolute;
+					top: 0;
+					right: 0;
+					opacity: 0.15;
+				}
+
+				i {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			&__text {
+				width: calc(100% - 72px);
+				margin: 0 -2px;
+				display: inline-block;
+				vertical-align: top;
+				padding: 0 15px;
+
+				h3 {
+					font-size: 18px;
+					margin-bottom: 8px;
+				}
+				p {
+					line-height: 24px;
+				}
+			}
+		}
+	}
+}
