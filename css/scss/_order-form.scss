@@ -8,6 +8,10 @@
 		color: #fff;
 		font-size: 40px;
 
+		@media ($phones) {
+			font-size: 35px;
+		}
+
 		span {
 			text-transform: uppercase;
 			color: $orange;
@@ -23,12 +27,27 @@
 		@include flex($wrap: wrap);
 		margin-top: 20px;
 
+		@media ($phones) {
+			display: block;
+			width: 100%;
+		}
+
 		.input,
 		.button {
 			width: 32%;
 			height: 50px;
 			display: inline-block;
+
+			@media ($phones) {
+				display: block;
+				width: 290px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 15px;
+			}
 		}
+
+
 	}
 }
 
