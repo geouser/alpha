@@ -30,6 +30,9 @@ h1 								{ 	font-family: $oseb;}
 h2, h3, h4, h5          		{   font-family: $ossb; font-weight: normal;}
 
 h2 								{	font-size: 38px; text-transform: none;}
+@media ($phones) {
+	h2 {font-size: 35px; margin-bottom: 10px;}
+}
 h2+small 						{ 	font-size: 15px;}
 
 .white {

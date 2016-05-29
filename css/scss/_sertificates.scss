@@ -9,15 +9,27 @@
 		
 		width: 50%;
 		float: left;
+
+		@media ($tablets) {
+			width: 100%;
+		}
 	}
 
 	h2 {
 		text-align: left;
+
+		@media ($tablets) {
+			text-align: center;
+		}
 	}
 
 	&__box {
 		@extend %clearfix;
 		margin-top: 40px;
+
+		@media ($tablets) {
+			margin-bottom: 50px;
+		}
 
 		.item {
 			width: 50%;
@@ -29,6 +41,26 @@
 			background-position: 50% 50%;
 			padding-top: 86px;
 			padding-right: 9px;
+
+			@media ($tablets) {
+				padding: 10px;
+				border: 15px solid #fff;
+				background-color: #EBEBEB;
+				background-image: none;
+				width: auto;
+				height: auto;
+				float: none;
+				display: inline-block;
+				-webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+				-moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+				box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+				margin: 0 20px;
+			}
+
+			@media (max-width: 500px) {
+				display: inline-block;
+				margin: 0 30px 25px;
+			}
 		}
 	}
 
@@ -36,6 +68,16 @@
 		padding-left: 95px;
 		position: relative;
 		text-align: left;
+
+		@media ($tablets) {
+			text-align: center;
+			padding-left: 0;
+			padding: 0 100px;
+		}
+
+		@media ($phones) {
+			padding: 0;
+		}
 
 		&:before {
 			content: '';
@@ -48,11 +90,21 @@
 			position: absolute;
 			top: 0;
 			left: 20px;
+
+			@media ($tablets) {
+				position: static;
+				display: inline-block;
+			}
 		}
 		
 		&.garanty {
 			padding-bottom: 65px;
 			margin-bottom: 65px;
+
+			@media ($tablets) {
+				padding-bottom: 0;
+				margin-bottom: 50px;
+			}
 		}
 		&.garanty:before {
 			background-image: url(../images/garanty.jpg);
@@ -68,12 +120,20 @@
 		}
 		p {
 			line-height: 24px;
+
+			@media ($tablets) {
+				text-align: left;
+			}
 		}
 
 		ul {
 			margin: 0;
 			font-size: 14px;
 			line-height: 24px;
+
+			@media ($tablets) {
+				text-align: left;
+			}
 		}
 
 		.important {
@@ -89,6 +149,17 @@
 			background-repeat: no-repeat;
 			background-position: 43px 50%;
 
+			@media ($tablets) {
+				width: 100%;
+				position: static;
+				margin-top: 20px;
+				padding: 15px 35px 15px 90px;
+			}
+			@media ($phones) {
+				padding: 15px 15px 15px 70px;
+				background-position: 23px 50%;
+			}
+
 			&:after {
 				content: '';
 				width: 14px;
@@ -100,7 +171,11 @@
 				top: -10px;
 				margin-left: -10px;
 				left: 50%;
-				@include transform(rotate(-45deg))
+				@include transform(rotate(-45deg));
+
+				@media ($tablets) {
+					display: none;
+				}
 			}
 
 			p {

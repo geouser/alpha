@@ -27,7 +27,7 @@
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
-	padding: 48px 0 60px;
+	padding: 48px 0 10px;
 
 	h2,
 	h2 + small {
@@ -44,6 +44,14 @@
 			width: 33.33%;
 			margin-bottom: 50px;
 
+			@media ($tablets) {
+				width: 50%;
+			}
+
+			@media (max-width: 600px) {
+				width: 100%;
+			}
+
 			&__icon {
 				width: 72px;
 				height: 72px;
@@ -55,6 +63,11 @@
 				margin: 0 -2px;
 				position: relative;
 
+				@media ($phones) {
+					width: 60px;
+					height: 60px;
+				}
+
 				&:after {
 					content: '';
 					width: 0;
@@ -65,6 +78,11 @@
 					top: 0;
 					right: 0;
 					opacity: 0.15;
+
+					@media ($phones) {
+						border-top: 60px solid #fff;
+						border-left: 60px solid transparent;
+					}
 				}
 
 				i {
@@ -80,12 +98,27 @@
 				vertical-align: top;
 				padding: 0 15px;
 
+				@media ($phones) {
+					width: calc(100% - 60px);
+					padding: 0 10px;
+				}
+
 				h3 {
 					font-size: 18px;
 					margin-bottom: 8px;
+
+					@media ($phones) {
+						margin-bottom: 5px;
+						font-size: 16px;
+					}
 				}
 				p {
 					line-height: 24px;
+
+					@media ($phones) {
+						line-height: normal;
+						font-size: 13px;
+					}
 				}
 			}
 		}

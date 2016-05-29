@@ -1,74 +1,112 @@
 .map {
 	padding: 70px 0;
 	position: relative;
+  @media ($tablets) {
+    padding: 0;
+  }
 
 	.wrapper {
 		position: relative;
 		z-index: 1;
 		text-align: left;
+    @media ($tablets) {
+      text-align: center;
+    }
 	}
 
 	.contacts {
 		width: 295px;
-  		box-shadow: 2px 3.464px 6px 3px rgba( 0, 0, 0, .2);
-  		padding: 30px;
-  		background-color: #fff;
+  	box-shadow: 2px 3.464px 6px 3px rgba( 0, 0, 0, .2);
+  	padding: 30px;
+  	background-color: #fff;
 
-  		h2 {
-  			margin-bottom: 15px;
-  		}
+    @media ($tablets) {
+      width: 100%;
+      text-align: center;
+      display: inline-block;
+      box-shadow: none;
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-  		&__address,
-  		&__phone,
-  		&__mail {
-  			font-size: 15px;
-  			font-style: normal;
-  			display: inline-block;
-  			width: 100%;
-  			line-height: 22px;
-  			margin-bottom: 20px;
-  			font-family: $os;
-  			color: #000;
-  			text-decoration: none;
-  			padding-left: 30px;
-  			position: relative;
+  	h2 {
+  		margin-bottom: 15px;
+  	}
 
-  			&:before {
-  				content: '';
-  				position: absolute;
-  				left: 0;
-  				top: 5px;
-  				width: 11px;
-  				height: 16px;
-  				background-position: 50% 50%;
-  				background-repeat: no-repeat;
-  				background-size: 100% auto;
-  			}
-  		}
+  	&__address,
+  	&__phone,
+  	&__mail {
+  		font-size: 15px;
+  		font-style: normal;
+  		display: inline-block;
+  		width: 100%;
+  		line-height: 22px;
+  		margin-bottom: 20px;
+  		font-family: $os;
+  		color: #000;
+  		text-decoration: none;
+  		padding-left: 30px;
+  		position: relative;
+      @media ($tablets) {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-left: 0;
+      }
 
-  		&__phone:hover,
-  		&__mail:hover {
-  			text-decoration: underline;
-  		}
-
-  		&__address:before {
-  			background-image: url(../images/pin.png);
-  		}
-  		&__phone:before {
-  			background-image: url(../images/android.png);
-  			width: 12px;
-  			height: 18px;
-  		}
-  		&__mail:before {
-  			background-image: url(../images/airplane.png);
-  			width: 16px;
+  		&:before {
+  			content: '';
+  			position: absolute;
+  			left: 0;
+  			top: 5px;
+  			width: 11px;
   			height: 16px;
+  			background-position: 50% 50%;
+  			background-repeat: no-repeat;
+  			background-size: 100% auto;
+
+        @media ($tablets) {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 15px;
+          position: static;
+        }
   		}
 
-  		.button {
-  			width: 100%;
-  			height: 57px;
-  		}
+  	}
+
+  	&__phone:hover,
+  	&__mail:hover {
+  		text-decoration: underline;
+  	}
+
+  	&__address:before {
+  		background-image: url(../images/pin.png);
+  	}
+  	&__phone:before {
+  		background-image: url(../images/android.png);
+  		width: 12px;
+  		height: 18px;
+  	}
+  	&__mail:before {
+  		background-image: url(../images/airplane.png);
+  		width: 16px;
+  		height: 16px;
+  	}
+
+  	.button {
+  		width: 100%;
+  		height: 57px;
+
+      @media ($tablets) {
+        width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+  	}
 	}
 
 	.map_canvas {
@@ -80,5 +118,10 @@
 		bottom: 0;
 		left: 0;
 		background-color: #ccc;
+
+    @media ($tablets) {
+      position: relative;
+      height: 250px;
+    }
 	}
 }
