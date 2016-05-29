@@ -66,10 +66,18 @@ $('.menu-button').on('click', function(event) {
 
   });
 
-$('.tabs').tabs();
-
 });
 
 
 
 
+$(window).load(function () {
+    var heights = $('.tab__info').map(function ()
+    {
+       if ($(this).height() > 280) {
+          var x = Math.floor($(this).height()/280);
+          $(this).addClass(x + 1 + '-columns');
+        }
+    }).get();
+    $('.tabs').tabs();
+});  
