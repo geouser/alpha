@@ -22,6 +22,9 @@
 			display: inline-block;
 			margin: 0;
 		}
+		@include m1000 { 
+		display: none;
+		}
 	}
 
 	.text_block {

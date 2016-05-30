@@ -93,10 +93,32 @@ $('.menu-button').on('click', function(event) {
 $(window).load(function () {
     var heights = $('.tab__info').map(function ()
     {
-       if ($(this).height() > 280) {
-          var x = Math.floor($(this).height()/280);
-          $(this).addClass(x + 1 + '-columns');
+       if ($(this).height() > 429) {
+          var x = Math.floor($(this).height()/429) + 1;
+          $(this).addClass('height-' + x );
+          $(this).attr('data-num', x);
         }
     }).get();
     $('.tabs').tabs();
+
+
+    var now = 1;
+    var top = 0;
+
+    $('.next').click(function(){
+        var position = parseInt($(this).siblings().attr('data-num'));
+        if (now < position) {
+            top -= 430
+            $(this).siblings('.tab__info').css("top", top + "px");
+            now ++;
+        }
+    });
+    $('.prev').click(function(){
+        if (now > 1) {
+            top +=  430;
+            $(this).siblings('.tab__info').css("top", "-" + top + "px")
+            now --;
+        }
+    });
+
 });  

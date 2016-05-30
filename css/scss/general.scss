@@ -109,6 +109,9 @@ header {
         color: #fff;
         font: 20px $epm;
         text-shadow: 1.5px 2.598px 13px rgb( 0, 0, 0 );
+        &:hover {
+            text-decoration: none;
+        }
     }
     .button {
         background: transparent !important;
@@ -119,8 +122,13 @@ header {
         height: 40px;
         margin-top: 5px;
         text-shadow: 1.5px 2.598px 13px rgb( 0, 0, 0 );
+        @include transition(all, .4s);
         -webkit-border-radius: 4px;
                 border-radius: 4px;
+        &:hover {
+            background: rgba(255,255,255, .1) !important;
+            text-shadow: 0;
+        }
     }
 }
 
@@ -134,6 +142,7 @@ header {
     @include position(absolute, 0px, auto, auto, 0);
     display: block;
     width: 200px;
+    z-index: 2;
     img {
         width: 100%;
     }
@@ -247,7 +256,7 @@ nav ul {
     position: relative;
     background-color: #000;
     @include m1000 {
-        padding-top: 0;
+        padding-top: 120px;
         h1 {width: 85%;}
     }
     @include m800 {
@@ -265,16 +274,25 @@ nav ul {
         .infoBlock {
             padding: 0;
             width: 15% !important;
+            &_icon {
+                 width: 60px;
+                height: 60px;
+                background-color: #FFF;
+                box-shadow: 1px 1.732px 13px 0px rgba( 0, 0, 0, .2 );
+                -webkit-border-radius: 50% 50%;
+                        border-radius: 50% 50%;
+            }
             p {text-shadow: 1.5px 2.598px 13px rgb( 0, 0, 0 );}
             &:nth-of-type(3) p,
             &:nth-of-type(4) p {
                 width: 132%;
+                margin-left: -16%;
             }
         }
         @include m1000 {
             .infoBlocks {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 30px;
             -webkit-justify-content: center;
                     justify-content: center;
             }
@@ -284,6 +302,7 @@ nav ul {
                 &:nth-of-type(3) p,
                 &:nth-of-type(4) p {
                     width: 100%;
+                    margin-left: 0;
                 }
             }
         }
@@ -315,6 +334,7 @@ nav ul {
                 font: 50px $oseb;
                 line-height: 1;
                 color: $orange;
+                text-shadow: 2px 3.464px 10px rgba( 0, 0, 0, .4);
             }
         }
         p {
@@ -328,7 +348,7 @@ nav ul {
            em {
             font: 13px $osb;
             strong {
-                font-size: 36px;
+                font-size: 48px;
             }
             }
             p {
@@ -341,6 +361,7 @@ nav ul {
 }
 
 
+
 /*---------------------- 
     INFOBLOCKS STYLES
 ------------------------*/
@@ -351,10 +372,19 @@ nav ul {
                   padding: 0 20px;
                   text-align: center;
             &_icon {
-                        width: 600px;
-                        height: 60px;
                         text-align: center;
                         margin: 0px auto 10px;
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            vertical-align: middle;
+                            height: 100%;
+                            margin-right: -3px;   
+                        }
+                        i {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
             }
             p {
                 font: 15px $os;
@@ -366,6 +396,7 @@ nav ul {
     &.three .infoBlock    {    width: 33%;}
     &.five .infoBlock     {    width: 20%;}
 }
+
 
 /*---------------------- 
     ABOUT STYLES
@@ -399,6 +430,7 @@ nav ul {
             box-shadow: 5.035px 6.217px 6px 0px rgba( 0, 0, 0, .2 );
             -webkit-border-radius: 5px;
                     border-radius: 5px;
+            
             h3 {
                 font: 18px $osb;
                 &:after {
@@ -505,8 +537,8 @@ nav ul {
             box-shadow: 0px 26px 39px 4px rgba( 0, 0, 0, .2 );
             .input {
                 width: 32%;
-height: 50px;
-display: inline-block;
+                height: 50px;
+                display: inline-block;
             }
             .input {
                 width: 35%;
@@ -727,20 +759,96 @@ display: inline-block;
             -webkit-box-shadow: none;
                     box-shadow: none;
             &__img,
-            &__info {
+            &__left {
                 display: inline-block;
                 vertical-align: top;
                 width: 50%;
                 margin-right: -3px;
+                overflow: hidden;
+                position: relative;
+            }
+            &__img {
+                img {
+                    display: block;
+                }
+            }
+            &__left {
+                padding-left: 0px; 
+                height: 495px;
+                width: calc(50% - 35px);
+                margin-left: 35px;
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 50px; width: 100%;
+                    background-color: #FFF;
+                    position: absolute; bottom: 0;
+                    z-index: 1;
+                }
+                button {
+                    position: absolute;
+                    bottom: 0px; left: 0;
+                    z-index: 2;
+                    width: 37px;
+                    height: 37px;
+                    background-color: #9C9C9C;
+                    text-align: center;
+                    border: none;
+                    padding-top: 2px;
+                    @include transition(all, .2s);
+                    &:hover {background-color: $green;}
+                    &:before {
+                        display: inline-block;
+                        vertical-align: middle;
+                        content: "";
+                        height: 100%;
+                        margin-right: -3px;
+                    }
+                    i {display: inline-block; 
+                        width: 11px; height: 11px;
+                       border-bottom: 2px solid #fff;
+                       border-left: 2px solid #fff;
+                       -webkit-border-radius: 2px;
+                       border-radius: 2px;  
+                       margin-left: 4px;
+                       -webkit-transform: rotate(45deg);
+                             -moz-transform: rotate(45deg);
+                              -ms-transform: rotate(45deg);
+                               -o-transform: rotate(45deg);
+                                  transform: rotate(45deg);   
+                    }
+                }
+                .next {
+                    left: 42px;
+                    i {
+                        margin-left: -4px;
+                       -webkit-transform: rotate(-136deg);
+                         -moz-transform: rotate(-136deg);
+                          -ms-transform: rotate(-136deg);
+                           -o-transform: rotate(-136deg);
+                              transform: rotate(-136deg);  
+                    }
+                }
             }
             &__info {
-                padding-left: 35px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 430px;
+                overflow: visible;
+                @include transition(all, .4s);
                 h3 {
                     font: 18px/24px $osb;
                 }
                 ul {
+                    margin-bottom: 0;
                     li {
                         margin-bottom: 20px;
+                        &:last-of-type {margin-bottom: 0;}
+                        &:before{
+                        content: '';
+                        }
                     }
                 }
             }
@@ -783,6 +891,17 @@ display: inline-block;
             vertical-align: top;
             margin-right: 18px;
             background-color: #7F5D92;
+            &:before {
+                content: "";
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+                margin-right: -3px;   
+            }
+            i {
+                display: inline-block;
+                vertical-align: middle;
+            }
             @include m1000 {
                margin-right: 10px;
             }
@@ -833,6 +952,30 @@ display: inline-block;
     & + .offer_form {padding: 60px 0;}
 }
 
+.columns-2 {
+    width: 200%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+        
+    -webkit-column-gap: 0px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 0px; /* Firefox */
+    column-gap: 0px;
+}
+.columns-3 {
+    width: 300%; height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+        
+    -webkit-column-gap: 0px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 0px; /* Firefox */
+    column-gap: 0px;
+}
 /*------------------------*/
 @import 'advantages';
 @import 'start-steps';
